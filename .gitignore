@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/dotnet5_asp.template/obj
+/dotnet5_asp.template/bin/Debug/net5.0
+/.vs/dotnet5_asp.template/v16

@@ -1,14 +1,14 @@
-using System;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using System;
 
-namespace YOUR_APP_NAME.YOUR_MODULE_NAME
+namespace dotnet5_asp.template
 {
     class Program
     {
         public static void Main(string[] args)
         {
-            dotenv.net.DotEnv.Config(false);
+            dotenv.net.DotEnv.Load();
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -18,8 +18,7 @@ namespace YOUR_APP_NAME.YOUR_MODULE_NAME
                 {
                     string port = Environment.GetEnvironmentVariable("PORT") ?? "3000";
                     string url = String.Concat("http://0.0.0.0:", port);
-
-                    webBuilder.UseStartup<YOUR_FUNCTION_NAME>().UseUrls(url);
+                    webBuilder.UseStartup<Startup>().UseUrls(url);
                 });
     }
 }

@@ -3,10 +3,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace YOUR_APP_NAME.YOUR_MODULE_NAME
+namespace dotnet5_asp.template
 {
-    public class YOUR_FUNCTION_NAME
+    public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -21,16 +25,8 @@ namespace YOUR_APP_NAME.YOUR_MODULE_NAME
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/{path:}", async context =>
-                {
-                    var path = context.Request.RouteValues["path"];
-                    await context.Response.WriteAsync("Hello " + path);
-                });
-            });
+            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }

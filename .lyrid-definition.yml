@@ -1,12 +1,13 @@
-name: YOUR_APP_NAME
+name: dotnet5_asp
 description: App Description
 ignoreFiles: .git bin obj
 modules:
-- name: YOUR_MODULE_NAME
+- name: template
   language: dotnetcore5.0
   web: asp
+  projectFolder: /dotnet5_asp.template
   description: Module description
   functions:
-  - name: YOUR_FUNCTION_NAME
-    entry: entry.cs
+  - name: Startup
+    entry: Startup.cs
     description: the entry point for the function
